@@ -20,6 +20,26 @@ class ArticlesController < ApplicationController
     #redirect to show page articles#path
     
   end
+  
+
+  def edit
+    #find article and send it to edit.html.erb
+    @article = Article.find(params[:id])
+
+  end
+
+  def update
+    #find article and update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+        flash[:notice] = "Article was successfully updated"
+        redirect_to article_path(@article)
+    else
+        render 'edit'
+    end
+  end
+
 
 
   def show
@@ -27,6 +47,13 @@ class ArticlesController < ApplicationController
     #create a template to show the article
     @article = Article.find(params[:id])
   end
+
+
+  
+    
+
+
+
   private
     def article_params
       # get the title and description
