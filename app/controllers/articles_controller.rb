@@ -1,4 +1,11 @@
 class ArticlesController < ApplicationController
+  def index
+    #get all articles
+    @articles = Article.all
+
+
+  end
+  
   def new
     @article = Article.new
 
@@ -49,8 +56,13 @@ class ArticlesController < ApplicationController
   end
 
 
-  
-    
+  def destroy
+    @article = Article.find(params[:id])
+    #delete
+    @article.destroy
+    flash[:notice] = "Article was successfully deleted"
+    redirect_to articles_path
+  end
 
 
 
