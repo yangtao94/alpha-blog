@@ -10,7 +10,13 @@
   </head>
 
   <body>
+  <%# any code here appears on every page %>
+    <%= render 'layouts/navigation' %>
     <%=  render 'layouts/messages' %>
+    <div class = "container">
+    
     <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
