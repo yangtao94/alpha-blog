@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+  #execute this before certain methods
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
+  
+  
+  
   def index
     #get all articles
     @articles = Article.all
@@ -31,13 +36,13 @@ class ArticlesController < ApplicationController
 
   def edit
     #find article and send it to edit.html.erb
-    @article = Article.find(params[:id])
+    
 
   end
 
   def update
     #find article and update
-    @article = Article.find(params[:id])
+    
 
     if @article.update(article_params)
         flash[:notice] = "Article was successfully updated"
@@ -52,12 +57,12 @@ class ArticlesController < ApplicationController
   def show
     #find the article based on the ID
     #create a template to show the article
-    @article = Article.find(params[:id])
+    
   end
 
 
   def destroy
-    @article = Article.find(params[:id])
+    
     #delete
     @article.destroy
     flash[:notice] = "Article was successfully deleted"
@@ -67,6 +72,11 @@ class ArticlesController < ApplicationController
 
 
   private
+    def set_article
+        @article = Article.find(params[:id])
+    end
+
+
     def article_params
       # get the title and description
       params.require(:article).permit(:title, :description)
