@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   root "pages#home"
   get 'about', to: "pages#about"
+
+  #adds show update edit delete create
+  resources :articles
 end
