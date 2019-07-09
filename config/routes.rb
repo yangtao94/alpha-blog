@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   #adds show update edit delete create
   resources :articles
+
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end
