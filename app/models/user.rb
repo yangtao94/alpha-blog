@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  #create one to many association
-  has_many :articles
+  #create one to many association, will destroy all articles if user is destroyed
+  has_many :articles, dependent: :destroy
   #lowercase all emails
   before_save {self.email = email.downcase }
   
