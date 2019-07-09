@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  #create one to many association
+  has_many :articles
+  #lowercase all emails
+  before_save {self.email = email.downcase }
+  
     #validation, not case sensitive
   validates :username, presence: true,
             uniqueness: {case_sensitive: false},
