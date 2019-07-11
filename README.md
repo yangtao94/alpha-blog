@@ -24,8 +24,7 @@
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
+
 
 
 ## 🧐 About <a name = "about"></a>
@@ -51,7 +50,7 @@ rails server
 to start the local server at port 3000. 
 
 Navigate to localhost:3000 to view the website
-```
+
 
 ## 🎈 Usage <a name="usage"></a>
 Add new routes at config/routes.rb. Create new controllers for the routes at app/controller
