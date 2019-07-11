@@ -1,4 +1,4 @@
-# Project Title
+# Alpha Blog
 
 ## Table of Contents
 + [About](#about)
